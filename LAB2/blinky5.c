@@ -28,7 +28,7 @@ void LED_INIT (void)
 	// the above assumes that bit 1 is to zero
 	GPIOB->MODER &= ~0x02;					//ONLY clear GPIOB1
 	
-	GPIOB->MODER |= 0x61;
+	GPIOB->MODER |= 0x03;
 }	
 
 void LED_ON (void)
