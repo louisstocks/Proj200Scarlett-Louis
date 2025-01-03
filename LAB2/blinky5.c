@@ -28,17 +28,20 @@ void LED_INIT (void)
 	// the above assumes that bit 1 is to zero
 	GPIOB->MODER &= ~0x02;					//ONLY clear GPIOB1
 	
-	GPIOB->MODER |= 0x03;
+	GPIOA->MODER |= 0x01;
+	GPIOA->MODER &= ~0x02;
 }	
 
 void LED_ON (void)
 {
 			GPIOB->ODR |= 1;							//ONLY TURN LED ON
+			GPIOA->ODR |= 1;
 }
 
 void LED_OFF (void)
 {
 			GPIOB->ODR &= ~1;							//ONLY TURN LED ON
+			GPIOA->ODR &= ~1;
 }
 
 int main(void)					// MAIN PROGRAM
